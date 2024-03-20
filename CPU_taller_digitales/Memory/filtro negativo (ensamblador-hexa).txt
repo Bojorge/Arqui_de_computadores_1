@@ -1,0 +1,18 @@
+.global _start                  
+
+.section .text
+_start:
+    LDR r0, =pixels           @ E3A00000	@ Cargar la dirección de inicio de la matriz de píxeles
+    LDR r1, =5                @ E3A01005	@ Longitud de la matriz (número de píxeles)
+    MOV r2, #255              @ E3A020FF	@ Valor constante para la resta
+
+pixel_loop:
+    LDRB r3, [r0], #1         @ E5D03000	@ Cargar el byte actual de la matriz en r3 y avanzar la dirección
+    MVN r3, r3                @ E1F03000	@ Hacer el negativo del valor del píxel
+    SUB r3, r2, r3            @ E0413002	@ Restar el negativo del valor del píxel a 255
+    STRB r3, [r0, #-1]!       @ E5D03001	@ Almacenar el resultado de vuelta en la matriz
+
+    SUBS r1, r1, #1           @ E2411001	@ Decrementar el contador de píxeles
+    BNE pixel_loop            @ 1AFFFFFA	@ Saltar de nuevo si no hemos procesado todos los píxeles
+
+    BKPT #0                   @ 12000000	@ Hacer una interrupción para detener la ejecución (puede variar según el entorno de desarrollo)

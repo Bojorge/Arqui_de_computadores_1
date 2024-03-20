@@ -1,0 +1,43 @@
+.global _start
+
+.section .text
+_start:
+    LDR r0, =pixels         	@ E59F0000	@ Cargar la dirección de inicio de la matriz de píxeles
+
+    MOV r1, #256            	@ E3A01000	@ Ancho de la matriz
+    MOV r2, #256            	@ E3A02000	@ Altura de la matriz
+    MOV r3, #0              	@ E3A03000	@ Índice de la matriz
+
+outer_loop:
+    MOV r4, r3              	@ E1A04003	@ Inicializar el índice de la ventana
+
+    row_loop:
+        MOV r5, #0          	@ E3A05000	@ Inicializar el contador para el valor medio
+        MOV r6, r4          	@ E1A06003	@ Inicializar el índice de la fila actual
+
+        median_loop:
+            LDRB r7, [r0, r6]   @ E5D07000	@ Cargar el valor actual de la ventana
+            ADD r5, r5, r7      @ E0855007	@ Sumar el valor actual al contador
+            ADD r6, r6, #1      @ E1A06001	@ Avanzar al siguiente elemento de la ventana
+            SUBS r1, r1, #1     @ E2411001	@ Decrementar el contador de columnas
+            BNE median_loop     @ 1AFFFFF8	@ Saltar si no hemos procesado todas las columnas
+
+        CMP r2, #1              @ E3520001	@ Verificar si hemos procesado todas las filas
+        BEQ calculate_median    @ 0A000002	@ Saltar si sí
+        ADD r0, r0, #1          @ E2800001	@ Avanzar a la siguiente fila en la matriz
+        ADD r4, r4, #256        @ E2840401	@ Avanzar al siguiente elemento en la matriz
+        B row_loop              @ EAFFFFEE	@ Volver al inicio del bucle de la fila
+
+calculate_median:
+    MOV r8, #256             	@ E3A08000	@ Número total de elementos en la ventana
+    SDIV r5, r5, r8          	@ EE075A90	@ Calcular el valor medio dividiendo por el número de elementos
+
+    STRB r5, [r0, r3]        	@ E5D05000	@ Almacenar el valor medio en el píxel central de la ventana
+
+    ADD r0, r0, #1           	@ E2800001	@ Avanzar al siguiente píxel en la matriz
+    ADD r3, r3, #1           	@ E2833001	@ Avanzar al siguiente píxel en la matriz de salida
+
+    CMP r3, #65536           	@ E35300FF	@ Verificar si hemos procesado todos los píxeles
+    BNE outer_loop           	@ 1AFFFFCE	@ Volver al inicio del bucle externo
+
+    BKPT #0                  	@ 12000000	@ Hacer una interrupción para detener la ejecución (puede variar según el entorno de desarrollo)
