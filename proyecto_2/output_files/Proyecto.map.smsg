@@ -1,3 +1,0 @@
-Warning (10273): Verilog HDL warning at decoder.sv(32): extended using "x" or "z" File: /home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor/decoder.sv Line: 32
-Warning (10273): Verilog HDL warning at decoder.sv(45): extended using "x" or "z" File: /home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor/decoder.sv Line: 45
-Warning (10273): Verilog HDL warning at extend.sv(14): extended using "x" or "z" File: /home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor/extend.sv Line: 14
