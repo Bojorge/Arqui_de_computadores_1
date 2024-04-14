@@ -1,13 +1,18 @@
-module Processor (
-    output logic [8:0] resultado // Salida del resultado de la suma de 9 bits
+module Processor (input logic clk, reset,
+			  output logic [31:0] WriteData, DataAdr, ReadData,
+			  output logic MemWrite
 );
 
-    // Definimos los valores de los números a sumar
-    logic [7:0] a = 5; // Primer número
-    logic [7:0] b = 3; // Segundo número
+	logic [31:0] Instr, PC;
 
-    always_comb begin
-        resultado = a + b; // Realiza la suma de los dos números y asigna el resultado
-    end
+	cpu cpu(clk, 
+			  reset, 
+			  PC, 
+			  Instr, 
+			  MemWrite, 
+			  DataAdr,
+			  WriteData, 
+			  ReadData
+	);
 
 endmodule
