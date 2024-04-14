@@ -1,11 +1,13 @@
 clear
 clc
 
-% Nombre del archivo binario que contiene las muestras de audio
-nombre_archivo = 'output_sin_reverberizado.bin';
+% Nombre del archivo binario que contiene las muestras de audio para leer
+%name_file = 'output_reverberizado.bin';
+%name_file = 'samples.bin';
+name_file = 'output_sin_reverberizado.bin';
 
 % Abrir el archivo binario para lectura
-fid = fopen(nombre_archivo, 'rb');
+fid = fopen(name_file, 'rb');
 
 % Leer las muestras del archivo binario
 muestras_audio = fread(fid, Inf, 'float32');

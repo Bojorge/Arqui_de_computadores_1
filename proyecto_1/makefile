@@ -1,5 +1,5 @@
 # Nombre del archivo de salida
-OUTPUT = read_file
+OUTPUT = reverberate
 
 # Ensamblador ARM
 #AS = arm-linux-gnueabi-as
@@ -17,7 +17,7 @@ ASFLAGS =
 CFLAGS = -nostdlib
 
 # Objetivo predeterminado
-all: $(OUTPUT)
+all: $(OUTPUT) run clean 
 
 # Regla de compilación para el ensamblador
 %.o: %.s
@@ -28,7 +28,7 @@ all: $(OUTPUT)
 	$(CC) $(CFLAGS) -o $@ $<
 
 # Regla para ensamblar y enlazar el archivo fuente
-$(OUTPUT): read_file.o
+$(OUTPUT): reverberate.o
 	$(CC) $(CFLAGS) -o $@ $<
 
 # Regla para ejecutar el archivo en el emulador
@@ -37,8 +37,7 @@ run: $(OUTPUT).elf
 
 # Regla para limpiar los archivos generados
 clean:
-	rm -f $(OUTPUT) read_file.o
+	rm -f $(OUTPUT) reverberate.o
 
 # Regla phony para evitar conflictos con archivos llamados clean o run
 .PHONY: clean run
-

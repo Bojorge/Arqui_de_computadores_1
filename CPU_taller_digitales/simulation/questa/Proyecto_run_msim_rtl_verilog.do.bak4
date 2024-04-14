@@ -1,0 +1,28 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Memory {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Memory/ROM.v}
+vlog -vlog01compat -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Memory {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Memory/RAM.v}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor/adder.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor/arm.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor/condlogic.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor/controller.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor/datapath.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor/decoder.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor/extend.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor/flopenr.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor/flopr.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor/mux2.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/Processor/regfile.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/VGA {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/VGA/pll.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/VGA {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/VGA/generate_graphic.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/VGA {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/VGA/generate_rectangle.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/VGA {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/VGA/vga_controller.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/TopModule.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/CPU.sv}
+vlog -sv -work work +incdir+/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/ALU {/home/bojorge/Documents/TEC/Arqui_1/Arqui_de_computadores_1/CPU_taller_digitales/ALU/alu.sv}
+
