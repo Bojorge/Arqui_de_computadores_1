@@ -1,18 +1,20 @@
-Fitter Status : Successful - Sun Apr 14 12:00:57 2024
-Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Fitter Status : Successful - Fri Apr 19 01:36:47 2024
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : Processor
-Top-level Entity Name : Processor
-Family : MAX 10
-Device : 10M08DAF484C8G
+Top-level Entity Name : TopModule
+Family : Cyclone V
+Device : 5CSEMA5F31C6
 Timing Models : Final
-Total logic elements : 1 / 8,064 ( < 1 % )
-    Total combinational functions : 1 / 8,064 ( < 1 % )
-    Dedicated logic registers : 0 / 8,064 ( 0 % )
-Total registers : 0
-Total pins : 9 / 250 ( 4 % )
+Logic utilization (in ALMs) : 62 / 32,070 ( < 1 % )
+Total registers : 75
+Total pins : 31 / 457 ( 7 % )
 Total virtual pins : 0
-Total memory bits : 0 / 387,072 ( 0 % )
-Embedded Multiplier 9-bit elements : 0 / 48 ( 0 % )
-Total PLLs : 0 / 2 ( 0 % )
-UFM blocks : 0 / 1 ( 0 % )
-ADC blocks : 0 / 1 ( 0 % )
+Total block memory bits : 524,288 / 4,065,280 ( 13 % )
+Total RAM Blocks : 64 / 397 ( 16 % )
+Total DSP Blocks : 0 / 87 ( 0 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )
